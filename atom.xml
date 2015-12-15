@@ -4,7 +4,7 @@
   <title><![CDATA[聪本脚的技术Blog]]></title>
   <link href="http://yeshengwu.github.io/atom.xml" rel="self"/>
   <link href="http://yeshengwu.github.io/"/>
-  <updated>2015-12-16T00:59:39+08:00</updated>
+  <updated>2015-12-16T01:04:22+08:00</updated>
   <id>http://yeshengwu.github.io/</id>
   <author>
     <name><![CDATA[Your Name ==Evan]]></name>
@@ -146,6 +146,8 @@
 </pre></td><td class='code'><pre><code class=''><span class='line'>moumoudeMacBook-Pro:_deploy evan$ git branch --set-upstream-to=origin/master master
 </span><span class='line'>Branch master set up to track remote branch master from origin.</span></code></pre></td></tr></table></div></figure>
 
+
+<p>细节2：</p>
 ]]></content>
   </entry>
   
