@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://yeshengwu.github.io/atom.xml" rel="self"/>
   <link href="http://yeshengwu.github.io/"/>
-  <updated>2015-12-16T00:31:57+08:00</updated>
+  <updated>2015-12-16T00:35:00+08:00</updated>
   <id>http://yeshengwu.github.io/</id>
   <author>
     <name><![CDATA[Your Name --Evan]]></name>
@@ -14,11 +14,11 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Post Title]]></title>
+    <title type="html"><![CDATA[搭建octopress+github Page总结]]></title>
     <link href="http://yeshengwu.github.io/blog/2015/12/15/post-title/"/>
     <updated>2015-12-15T22:49:57+08:00</updated>
     <id>http://yeshengwu.github.io/blog/2015/12/15/post-title</id>
-    <content type="html"><![CDATA[<p>开始用 octopress来写blog了，看博客看多了也想自己写写。今天就把搭建github page +octopress的过程总结下吧。</p>
+    <content type="html"><![CDATA[<p>开始用 octopress来写blog了，看博客看多了也想自己写写。今天就把搭建octopress ＋github page的过程总结下吧。</p>
 
 <p>1，参考 <a href="http://blog.devtang.com/blog/2012/02/10/setup-blog-based-on-github/">这篇文章</a>，但是细节还有提高。</p>
 
