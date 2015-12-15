@@ -9,8 +9,8 @@
   <meta name="author" content="Your Name --Evan">
 
   
-  <meta name="description" content="开始用 octopress来写blog了，看博客看多了也想自己写写。今天就把搭建github page +octopress的过程总结下吧。 1，参考 这篇文章，但是细节还有提高。 2，
-">
+  <meta name="description" content="开始用 octopress来写blog了，看博客看多了也想自己写写。今天就把搭建github page +octopress的过程总结下吧。 1，参考 这篇文章，但是细节还有提高。 细节1：Deploying to Github Pages
+octopress deploying描述有3种方式， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -88,7 +88,130 @@
 
 <p>1，参考 <a href="http://blog.devtang.com/blog/2012/02/10/setup-blog-based-on-github/">这篇文章</a>，但是细节还有提高。</p>
 
-<p>2，</p>
+<p>细节1：Deploying to Github Pages
+<a href="http://octopress.org/docs/deploying/">octopress deploying</a>描述有3种方式，第一种是 GitHub Pages
+第二个是 发布到Heroku；第三个是Rsync，所以可以Deploying with Rsync。
+我们选第一种 <a href="http://octopress.org/docs/deploying/github/">github page</a>这样按照文档设定就可以了。</p>
+
+<p>其中新手不知道执行命令在哪个文件夹下面，这里提醒下都在 octopress下面。当执行到 rake deploy时会做什么事情呢？上面文档也说得很清楚：只是没注意_deploy文件夹会建立git仓库来拉github上的page仓库导致push不成功命令log如下：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>moumoudeMacBook-Pro:octopress evan$ rake deploy
+</span><span class='line'>## Deploying branch to Github Pages 
+</span><span class='line'>## Pulling any updates from Github Pages 
+</span><span class='line'>cd _deploy
+</span><span class='line'>warning: no common commits
+</span><span class='line'>remote: Counting objects: 31, done.
+</span><span class='line'>remote: Total 31 (delta 0), reused 0 (delta 0), pack-reused 31
+</span><span class='line'>Unpacking objects: 100% (31/31), done.
+</span><span class='line'>From https://github.com/yeshengwu/yeshengwu.github.io
+</span><span class='line'> * [new branch]      master     -&gt; origin/master
+</span><span class='line'>There is no tracking information for the current branch.
+</span><span class='line'>Please specify which branch you want to merge with.
+</span><span class='line'>See git-pull(1) for details
+</span><span class='line'>
+</span><span class='line'>    git pull &lt;remote&gt; &lt;branch&gt;
+</span><span class='line'>
+</span><span class='line'>If you wish to set tracking information for this branch you can do so with:
+</span><span class='line'>
+</span><span class='line'>    git branch --set-upstream-to=origin/&lt;branch&gt; master
+</span><span class='line'>
+</span><span class='line'>cd -
+</span><span class='line'>
+</span><span class='line'>rm -rf _deploy/assets
+</span><span class='line'>rm -rf _deploy/atom.xml
+</span><span class='line'>rm -rf _deploy/blog
+</span><span class='line'>rm -rf _deploy/favicon.png
+</span><span class='line'>rm -rf _deploy/images
+</span><span class='line'>rm -rf _deploy/index.html
+</span><span class='line'>rm -rf _deploy/javascripts
+</span><span class='line'>rm -rf _deploy/robots.txt
+</span><span class='line'>rm -rf _deploy/sitemap.xml
+</span><span class='line'>rm -rf _deploy/stylesheets
+</span><span class='line'>
+</span><span class='line'>## Copying public to _deploy
+</span><span class='line'>cp -r public/. _deploy
+</span><span class='line'>cd _deploy
+</span><span class='line'>
+</span><span class='line'>## Committing: Site updated at 2015-12-15 15:51:57 UTC
+</span><span class='line'>On branch master
+</span><span class='line'>nothing to commit, working directory clean
+</span><span class='line'>
+</span><span class='line'>## Pushing generated _deploy website
+</span><span class='line'>Username for 'https://github.com': yeshengwu510168@gmail.com
+</span><span class='line'>Password for 'https://yeshengwu510168@gmail.com@github.com': 
+</span><span class='line'>To https://github.com/yeshengwu/yeshengwu.github.io
+</span><span class='line'> ! [rejected]        master -&gt; master (non-fast-forward)
+</span><span class='line'>error: failed to push some refs to 'https://github.com/yeshengwu/yeshengwu.github.io'
+</span><span class='line'>hint: Updates were rejected because the tip of your current branch is behind
+</span><span class='line'>hint: its remote counterpart. Integrate the remote changes (e.g.
+</span><span class='line'>hint: 'git pull ...') before pushing again.
+</span><span class='line'>hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+</span><span class='line'>
+</span><span class='line'>## Github Pages deploy complete
+</span><span class='line'>cd -</span></code></pre></td></tr></table></div></figure>
+
+
+<p>所以cd到_deploy后,设置好git upstream 后再rake deploy一次就可以了。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>moumoudeMacBook-Pro:_deploy evan$ git branch --set-upstream-to=origin/master master
+</span><span class='line'>Branch master set up to track remote branch master from origin.</span></code></pre></td></tr></table></div></figure>
+
 </div>
 
 
