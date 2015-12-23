@@ -4,7 +4,7 @@
   <title><![CDATA[聪本脚的技术Blog]]></title>
   <link href="http://yeshengwu.github.io/atom.xml" rel="self"/>
   <link href="http://yeshengwu.github.io/"/>
-  <updated>2015-12-16T01:04:22+08:00</updated>
+  <updated>2015-12-23T08:00:31+08:00</updated>
   <id>http://yeshengwu.github.io/</id>
   <author>
     <name><![CDATA[Your Name ==Evan]]></name>
@@ -147,7 +147,12 @@
 </span><span class='line'>Branch master set up to track remote branch master from origin.</span></code></pre></td></tr></table></div></figure>
 
 
-<p>细节2：</p>
+<p>细节2：google api巨慢的问题
+参考 <a href="http://droidyue.com/blog/2014/06/22/fix-octopress-slow-loading-speed-issue-in-china-mainland/">技术小黑屋</a></p>
+
+<h2>总结</h2>
+
+<p>其实对于如何架设这样的blog，网上很多参考的文章，有的写的不错很有指导性，也有的直接转载却没有实际动手过。所以自己需要有个提醒，自己实战才知道会遇到哪些问题，把自己实战中遇到的细节写出来才能对别人有所帮助，千遍一律的东西网上一大把，关键是自己实战中的细节经验才是宝贵的。</p>
 ]]></content>
   </entry>
   
